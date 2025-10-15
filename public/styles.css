@@ -1,0 +1,187 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: #f5f5f5;
+}
+
+.container {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background: #f5f5f5;
+  color: black;
+  padding: 14px 10px;
+  margin-bottom: 30px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  opacity: 0.9;
+}
+
+nav {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+nav h2 {
+  margin-bottom: 15px;
+  color: #667eea;
+}
+
+nav ul {
+  list-style: none;
+}
+
+nav li {
+  margin-bottom: 10px;
+}
+
+nav a {
+  color: #667eea;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: #764ba2;
+  text-decoration: underline;
+}
+
+main {
+  margin-bottom: 40px;
+}
+
+.endpoint {
+  background: white;
+  border-radius: 8px;
+  padding: 25px;
+  margin-bottom: 20px;
+}
+
+article h2 {
+  color: #667eea;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+}
+
+.method {
+  display: inline-block;
+  padding: 5px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  font-size: 0.9em;
+  margin-right: 10px;
+}
+
+.method.get {
+  background: #61affe;
+  color: white;
+}
+
+.endpoint-path {
+  display: inline-block;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1em;
+  color: #333;
+}
+
+.description {
+  margin: 15px 0;
+  color: #666;
+  font-size: 1.05em;
+}
+
+.params,
+.response {
+  margin-top: 15px;
+}
+
+.params h3,
+.response h3 {
+  color: #667eea;
+  margin-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.param-item {
+  background: #f8f9fa;
+  padding: 10px;
+  border-left: 3px solid #667eea;
+  margin-bottom: 8px;
+}
+
+.param-name {
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  color: #e83e8c;
+}
+
+pre {
+  background: #2d2d2d;
+  color: #f8f8f2;
+  padding: 15px;
+  border-radius: 5px;
+  overflow-x: auto;
+  font-size: 0.9em;
+}
+
+code {
+  font-family: 'Courier New', monospace;
+}
+
+.example {
+  margin-top: 10px;
+}
+
+.example-title {
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: #667eea;
+}
+
+footer {
+  padding: 2px;
+  border-radius: 8px;
+  text-align: center;
+  color: #666;
+}
+
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: #667eea;
+  color: white;
+  padding: 8px;
+  text-decoration: none;
+  z-index: 100;
+}
+
+.skip-link:focus {
+  top: 0;
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="API documentation for parsing Telegram channels, bots, and groups. Get channel information, posts, and latest publications through a simple REST API.">
+  <meta name="keywords" content="Telegram API, Telegram parser, API documentation, Telegram channels, get posts">
+  <meta name="author" content="mdobordey">
+  <meta name="robots" content="index, follow">
+  <link rel="stylesheet" href="styles.css" />
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Parser Docs - API for Telegram Channels">
+  <meta property="og:description"
+    content="Simple REST API for getting information about Telegram channels, bots, and groups">
+  <meta property="og:url" content="https://parser.tglist.info">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Parser Docs - API for Telegram Channels">
+  <meta name="twitter:description"
+    content="Simple REST API for getting information about Telegram channels, bots, and groups">
+
+  <title>Parser Docs - API Documentation for Telegram Resources</title>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Parser Docs - API Documentation",
+    "description": "Complete REST API documentation for parsing Telegram channels, bots, and groups",
+    "keywords": "Telegram API, REST API, documentation",
+    "datePublished": "2025-10-16",
+    "dateModified": "2025-10-16",
+    "author": {
+      "@type": "Person",
+      "name": "mdobrodey",
+      "url": "https://github.com/mdobrodey"
+    }
+  }
+  </script>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Parser Docs</h1>
+      <p class="subtitle">REST API for parsing Telegram channels, bots, and groups</p>
+    </header>
+
+    <nav aria-label="Documentation navigation">
+      <h2>Contents</h2>
+      <ul>
+        <li><a href="#get-channel-info">Get channel information</a></li>
+        <li><a href="#get-specific-post">Get specific post</a></li>
+        <li><a href="#get-latest-posts">Get latest posts</a></li>
+        <li><a href="#errors">Error codes</a></li>
+      </ul>
+    </nav>
+
+    <main id="main-content">
+      <article class="endpoint" id="get-channel-info">
+        <h2>Get Channel Information</h2>
+        <div>
+          <span class="method get" aria-label="GET request">GET</span>
+          <code class="endpoint-path">/:username</code>
+        </div>
+        <p class="description">Get information about a Telegram channel, bot, or group</p>
+        <section class="params">
+          <h3>Parameters:</h3>
+          <div class="param-item">
+            <span class="param-name">username</span> - username of the channel, bot, or group
+          </div>
+        </section>
+        <div class="example">
+          <p class="example-title">Request example:</p>
+          <pre><code>GET https://parser.tglist.info/durov</code></pre>
+        </div>
+        <section class="response">
+          <h3>Response example:</h3>
+          <pre><code>{
+  "success": true,
+  "data": {
+    "type": "channel",
+    "name": "Pavel Durov",
+    "avatar": "https://cdn4.telesco.pe/file/gknMlaqm2xll5SXcorhYBMBnaNYSBDgK0RXwKjddQeEsAncRwKJ9WKFymJPtJHV9B_V_t2mto62pU9ACVp1bd_GJMx5B2svpuQ0tyZ0klFMlzRGBwXpGnUrTX3O1FQWnzo_KkpgbdmdB_t-w5fohgkAguLc-4p1TcsDa8EnlIh-2iVRN76Fz7G6qZbvovzVTdI9J_6sFQ8TXHGyT0Bd3vlO2xbHcRkWWrA1kMX4LS8TH22bXunXlOboDOLGQH1CpT1MhIygW6Z4iLDiAj6OU6nhdL1ScEVCuHEyvfSFH9TsKxISHMIsSwpbq83ZuSpMJuZQTgTIBwHhToTSyUKPswg.jpg",
+    "subscribers": 10967661,
+    "description": "Founder of Telegram.",
+    "isVerified": 1
+  },
+  "timestamp": "2025-10-15T20:56:52.095Z"
+}</code></pre>
+        </section>
+      </article>
+
+      <article class="endpoint" id="get-specific-post">
+        <h2>Get Specific Post</h2>
+        <div>
+          <span class="method get" aria-label="GET request">GET</span>
+          <code class="endpoint-path">/:username/:postId</code>
+        </div>
+        <p class="description">Get a specific post from a channel</p>
+        <section class="params">
+          <h3>Parameters:</h3>
+          <div class="param-item">
+            <span class="param-name">username</span> - username of the channel, bot, or group
+          </div>
+          <div class="param-item">
+            <span class="param-name">postId</span> - post ID (numbers only)
+          </div>
+        </section>
+        <div class="example">
+          <p class="example-title">Request example:</p>
+          <pre><code>GET https://parser.tglist.info/durov/123</code></pre>
+        </div>
+        <section class="response">
+          <h3>Response example:</h3>
+          <pre><code>{
+  "success": true,
+  "data": {
+    "type": "channel_post",
+    "author": {
+      "name": "Pavel Durov",
+      "username": "durov"
+    },
+    "text": "I can understand why Donald Trump threatens to ban TikTok unless its US assets are sold to US investors...",
+    "media": [],
+    "reactions": [
+      {
+        "emoji": "👍",
+        "count": 514
+      },
+      {
+        "emoji": "❤",
+        "count": 176
+      },
+      {
+        "emoji": "🤡",
+        "count": 62
+      }
+    ],
+    "views": 1340000,
+    "date": "2020-08-05T13:29:10+00:00",
+    "url": "https://t.me/durov/123"
+  },
+  "timestamp": "2025-10-15T20:57:29.449Z"
+}</code></pre>
+        </section>
+      </article>
+
+      <article class="endpoint" id="get-latest-posts">
+        <h2>Get Latest Posts</h2>
+        <div>
+          <span class="method get" aria-label="GET request">GET</span>
+          <code class="endpoint-path">/:username/latestPosts</code>
+        </div>
+        <p class="description">Get the latest posts from a channel</p>
+        <section class="params">
+          <h3>Parameters:</h3>
+          <div class="param-item">
+            <span class="param-name">username</span> - username of the channel, bot, or group
+          </div>
+        </section>
+        <div class="example">
+          <p class="example-title">Request example:</p>
+          <pre><code>GET https://parser.tglist.info/durov/latestPosts</code></pre>
+        </div>
+        <section class="response">
+          <h3>Response example:</h3>
+          <pre><code>{
+  "success": true,
+  "data": {
+    "type": "channel_posts",
+    "posts": [
+      {
+        "id": "435",
+        "url": "https://t.me/durov/435",
+        "author": {
+          "name": "Pavel Durov",
+          "username": "durov"
+        },
+        "text": "➕ If you're a student choosing what to focus on, pick MATH...",
+        "date": "2025-07-11T23:05:07+00:00",
+        "views": 4610000,
+        "media": [],
+        "forwarded": false
+      }
+    ]
+  }
+}</code></pre>
+        </section>
+      </article>
+
+      <article class="endpoint" id="errors">
+        <h2>Error Codes</h2>
+        <section class="params">
+          <div class="param-item">
+            <span class="param-name">400</span> - Invalid request parameters
+          </div>
+          <div class="param-item">
+            <span class="param-name">404</span> - Channel not found or has no posts
+          </div>
+          <div class="param-item">
+            <span class="param-name">500</span> - Parsing error
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <p>REST API documentation for working with Telegram</p>
+    </footer>
+  </div>
+</body>
+
+</html>
