@@ -12,13 +12,13 @@
   <link rel="stylesheet" href="styles.css" />
 
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Parser Docs - API for Telegram Channels">
+  <meta property="og:title" content="Parser Docs - API for Telegram Resources">
   <meta property="og:description"
     content="Simple REST API for getting information about Telegram channels, bots, and groups">
   <meta property="og:url" content="https://parser.tglist.info">
 
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Parser Docs - API for Telegram Channels">
+  <meta name="twitter:title" content="Parser Docs - API for Telegram Resources">
   <meta name="twitter:description"
     content="Simple REST API for getting information about Telegram channels, bots, and groups">
 
@@ -52,7 +52,7 @@
     <nav aria-label="Documentation navigation">
       <h2>Contents</h2>
       <ul>
-        <li><a href="#get-channel-info">Get channel information</a></li>
+        <li><a href="#get-channel-info">Get resource information</a></li>
         <li><a href="#get-specific-post">Get specific post</a></li>
         <li><a href="#get-latest-posts">Get latest posts</a></li>
         <li><a href="#errors">Error codes</a></li>
@@ -61,7 +61,7 @@
 
     <main id="main-content">
       <article class="endpoint" id="get-channel-info">
-        <h2>Get Channel Information</h2>
+        <h2>Get Resource Information</h2>
         <div>
           <span class="method get" aria-label="GET request">GET</span>
           <code class="endpoint-path">/:username</code>
@@ -100,11 +100,11 @@
           <span class="method get" aria-label="GET request">GET</span>
           <code class="endpoint-path">/:username/:postId</code>
         </div>
-        <p class="description">Get a specific post from a channel</p>
+        <p class="description">Get a specific post from a channel or group</p>
         <section class="params">
           <h3>Parameters:</h3>
           <div class="param-item">
-            <span class="param-name">username</span> - username of the channel, bot, or group
+            <span class="param-name">username</span> - username of the channel or group
           </div>
           <div class="param-item">
             <span class="param-name">postId</span> - post ID (numbers only)
@@ -159,7 +159,7 @@
         <section class="params">
           <h3>Parameters:</h3>
           <div class="param-item">
-            <span class="param-name">username</span> - username of the channel, bot, or group
+            <span class="param-name">username</span> - username of the channel
           </div>
         </section>
         <div class="example">
